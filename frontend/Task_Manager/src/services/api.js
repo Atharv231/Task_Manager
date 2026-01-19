@@ -1,22 +1,22 @@
-const API_URL = 'http://localhost:4000/Task';
+const API_URL = "https://task-manager-2-43ei.onrender.com/Task";
 
 export async function getTasks() {
   const res = await fetch(API_URL);
   if (!res.ok) {
-    throw new Error('Failed to fetch tasks');
+    throw new Error("Failed to fetch tasks");
   }
   return res.json();
 }
 
 export async function addTask(task) {
   const res = await fetch(API_URL, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify(task),
   });
 
   if (!res.ok) {
-    throw new Error('Failed to add task');
+    throw new Error("Failed to add task");
   }
 
   return res.json();
