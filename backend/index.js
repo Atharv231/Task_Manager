@@ -19,6 +19,9 @@ app.use("/", authRoutes);
 //   console.log('Backend server is running on port 4000');
 // });
 
+//Now My local DataBase is connected to the online clude database using supabase
+
+//For Online DataBase connectivity
 const startServer = async () => {
   try {
     await sequelize2.authenticate();
@@ -28,6 +31,7 @@ const startServer = async () => {
     require("./database/data");
     require("./database/Users");
 
+    //These will Create the table in database if not there
     await sequelize.sync();
 
     app.listen(4000, () => {
