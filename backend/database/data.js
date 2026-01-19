@@ -1,5 +1,5 @@
 const { DataTypes } = require("@sequelize/core");
-const sequelize = require("../utils/index").default;
+const sequelize = require("../utils/index");
 
 const Task = sequelize.define(
   "Task",
@@ -20,9 +20,8 @@ const Task = sequelize.define(
     },
   },
   {
-    tableName: "tasks",
-    timestamps: true, // createdAt & updatedAt
-  }
+    timestamps: false,
+  },
 );
 
 module.exports = Task;

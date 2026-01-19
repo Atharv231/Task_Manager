@@ -1,14 +1,10 @@
-import { Sequelize } from "@sequelize/core";
-import { PostgresDialect } from "@sequelize/postgres";
+const { Sequelize } = require("@sequelize/core");
+const { PostgresDialect } = require("@sequelize/postgres");
 
 const sequelize = new Sequelize({
   dialect: PostgresDialect,
-  database: "timepass",
-  user: "postgres",
-  password: "12345",
-  host: "localhost",
-  port: 5432,
-  clientMinMessages: "notice",
+  url: process.env.DATABASE_URL,
+  logging: false,
 });
 
-export default sequelize;
+module.exports = sequelize;
