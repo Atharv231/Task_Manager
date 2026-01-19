@@ -1,4 +1,4 @@
-const { DataTypes } = require("@sequelize/core");
+const { DataTypes } = require("sequelize");
 const sequelize = require("../utils/index");
 
 const Task = sequelize.define(
